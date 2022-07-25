@@ -1,3 +1,4 @@
+
 function listarProductos() {
     console.table(productos)
 } 
@@ -10,16 +11,27 @@ function agregarProducto() {
         productos.push(new Producto(id, nombre, precio))
 }
 
+// function iterarArray() {
+//     debugger
+//     for (let producto of productos) {
+//         console.table(producto)
+//     }
+// }
 
 function listarProductos() {
-    productos.forEach( (producto)=> {
+    //debugger
+    productos.forEach( (producto)=> { //alternativa a for...of o al for convencional
+        //console.table(producto)
         console.log(producto.nombre)
     });
 }
 
 function buscarProducto() {
-    let aBuscar = prompt("Ingrese el nombre del producto a buscar:")
-        let resultado = productos.find((producto)=> producto.id === parseInt(aBuscar))
+    let aBuscar = prompt("Ingrese el nombre del producto a buscar:")//.toUpperCase()  //(HACE EL NOMBRE INGRESADO EN MAYUSCULA)
+        debugger
+        let resultado = productos.find((producto)=> producto.id === parseInt(aBuscar)) // buscqueda por id
+        //let resultado = productos.find((producto)=> producto.nombre === aBuscar) // busta de nombre exacto
+        //let resultado = productos.find((producto)=> producto.nombre.includes(aBuscar)) // buscqueda de nombre parcial
         if (resultado !== undefined) {
             console.clear()
             console.table(resultado) 
@@ -29,7 +41,7 @@ function buscarProducto() {
 
 function filtrarProducto (){
         let aBuscar = prompt("Ingrese el nombre del producto a buscar:")
-        let resultado = productos.filter((producto)=> producto.nombre.includes(aBuscar))
+        let resultado = productos.filter((producto)=> producto.nombre.includes(aBuscar))    
             if (resultado !== undefined) {
                 console.clear()
                 console.table(resultado)
@@ -37,7 +49,7 @@ function filtrarProducto (){
     }
 function existeProducto (){
     let aBuscar = prompt("Ingrese el codigo del producto a buscar:")
-    let resultado = productos.some((producto)=> producto.id === parseInt(aBuscar))
+    let resultado = productos.some((producto)=> producto.id === parseInt(aBuscar))    
         if (resultado === true) {
             console.log("El producto si existe")
         } else{
@@ -65,9 +77,15 @@ function selecionCarrito(){
     console.log("total del carrito", sumatotal)
 }
 
+
+
+
 function creoID() {
     return parseInt(Math.random() * 10000)
 }
+
+
+
 
 //FUNCION QUE SE USA PARA LLENAR AUTOMÁTICAMENTE EL ARRAY DE OBJETOS A USAR
 function generadorAutomatico() {

@@ -1,10 +1,12 @@
 function cargarProductos() {
+    //debugger
     listadoFrutas.innerHTML = ""
     for (const producto of productos) {
         const li = document.createElement("li")
               li.className = "collection-item blue-text"
               li.innerText = producto
               li.id = producto + "Prod"
+              //li.onclick = ()=> { agregarAlCarrito(`${li.innerText}`) }
               li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
               listadoFrutas.append(li)
     }
@@ -13,6 +15,8 @@ function cargarProductos() {
 cargarProductos()
 
 function agregarAlCarrito(prod) {
+    //debugger
+    
     if (prod.trim() !== "") {
         carrito.push(prod)
         guradoCarrito()
@@ -25,7 +29,9 @@ function agregarAlCarrito(prod) {
     }
 }
 
+
 function removerDelCarrito(prod) {
+    //debugger
     const productoAremover = document.getElementById(`${prod}`)
           productoAremover.remove()
           item = carrito.indexOF(productoAremover.innerText)
@@ -40,7 +46,9 @@ function guradoCarrito() {
     }
 }
 
+
 function reuperoCarrito(){
+    // debugger
     let miCarrito
     if (miCarrito = JSON.parse(localStorage.getItem("carrito"))) {
         miCarrito.forEach(hambur => {
@@ -50,3 +58,14 @@ function reuperoCarrito(){
 }
 
 reuperoCarrito()
+
+
+
+
+
+
+
+
+
+
+
