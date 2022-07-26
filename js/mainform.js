@@ -1,3 +1,4 @@
+
 const focoEnCampos = ()=> {
     const campos = document.querySelectorAll("input")
     for (let campo of campos) {
@@ -9,12 +10,14 @@ const focoEnCampos = ()=> {
 }
 
 document.addEventListener("submit", (e)=> {
+    //debugger
     e.preventDefault()
     guardarDatosDeUsr()
     FormSubm("Formulario enviado.")
    
 })
 function guardarDatosDeUsr() {
+    // debugger
     const datosDeUsr = {
         nombre: inputNombre.value,
         telefono: inputTelefono.value,
@@ -46,4 +49,10 @@ inputNombre.addEventListener("keypress", (event)=> {
     }
 })
 
+//EJECUTARSE AL CARGAR EL DOCUMENTO HTML
 focoEnCampos()
+
+
+
+
+
