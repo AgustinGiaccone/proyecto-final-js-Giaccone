@@ -1,5 +1,5 @@
 const promesa = Promise.resolve(prompt("un numero"))
-// debugger
+
 promesa.then(nro => nro * 3)
        .then(nro => nro * 5)
        .then(nro => nro * 7)

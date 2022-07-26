@@ -10,28 +10,16 @@ function agregarProducto() {
     let precio = parseInt(prompt("Ingresa el precio:"))
         productos.push(new Producto(id, nombre, precio))
 }
-
-// function iterarArray() {
-//     debugger
-//     for (let producto of productos) {
-//         console.table(producto)
-//     }
-// }
-
 function listarProductos() {
-    //debugger
-    productos.forEach( (producto)=> { //alternativa a for...of o al for convencional
-        //console.table(producto)
+    productos.forEach( (producto)=> {
         console.log(producto.nombre)
     });
 }
 
 function buscarProducto() {
-    let aBuscar = prompt("Ingrese el nombre del producto a buscar:")//.toUpperCase()  //(HACE EL NOMBRE INGRESADO EN MAYUSCULA)
+    let aBuscar = prompt("Ingrese el nombre del producto a buscar:")
         debugger
-        let resultado = productos.find((producto)=> producto.id === parseInt(aBuscar)) // buscqueda por id
-        //let resultado = productos.find((producto)=> producto.nombre === aBuscar) // busta de nombre exacto
-        //let resultado = productos.find((producto)=> producto.nombre.includes(aBuscar)) // buscqueda de nombre parcial
+        let resultado = productos.find((producto)=> producto.id === parseInt(aBuscar))
         if (resultado !== undefined) {
             console.clear()
             console.table(resultado) 
@@ -84,10 +72,6 @@ function creoID() {
     return parseInt(Math.random() * 10000)
 }
 
-
-
-
-//FUNCION QUE SE USA PARA LLENAR AUTOMÁTICAMENTE EL ARRAY DE OBJETOS A USAR
 function generadorAutomatico() {
     productos.push(new Producto(1234, "Hamburguesa rellena de queso envuelto en tocino", 800))
     productos.push(new Producto(2345, "Hamburguesa de res clásica", 500))
@@ -106,25 +90,3 @@ function generarCarrito() {
     carrito.push(new Producto(3456, "Brochet de hamburguesa", 500))
 }
 generarCarrito()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,11 +10,7 @@ const swa = () => {
 
 const toastSA = (mensaje)=> {
     Swal.fire({
-        icon: "success", //ICONO DE TILDE VERDE
-        //icon: "error", //ICONO DE ERROR
-        //icon:"warning",// LLAMADA DE ATENCION, PELIGRO
-        //icon:"info",// LLAMADA DE ATENCION, PELIGRO
-        //icon:"question",// LLAMADA DE ATENCION, PELIGRO
+        icon: "success",
         title: mensaje,
         position: "top-end",
         showConfirmButton: true,

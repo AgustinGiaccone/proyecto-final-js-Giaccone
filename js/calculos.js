@@ -1,6 +1,3 @@
-
-//FUNCION SIMPLE
-
 function calcular() {
     let primernumero = prompt("ingrese el primer numero")
     let segundonumero = prompt("ingrese elsegundo numero")
@@ -8,8 +5,6 @@ function calcular() {
         console.log("resultado de la operacion:", result)   
 }
 calcular()
-
-//FUNCION CON PARAMETRO
 
 function calcular(parametro1, parametro2){
     console.log("resultado", parseFloat(parametro1) * parseFloat(parametro2))
@@ -24,8 +19,6 @@ function numero_final(){
 }
 
 numero_final()
-
-// FUNCIONES CON PARAMETRO Y RETORNO
 
 function calcular(){
     debugger
@@ -42,8 +35,6 @@ function realizar_calculo(param1, param2){
 }
 
 function calcular(){
-    //debugger
-
     let primernumero = prompt("ingresa el primer numero")
     let segundonumero = prompt("ingrese el seundo numero")
     let operador = prompt("seleciona su operador:(suma(+), resta(-), multiplicacion(*), divicion(/))")
@@ -69,5 +60,3 @@ function realizarelcalculo(parametro1, parametro2, parametro3){
 let  fullname = "agustin giaccone"
 
 let nroaleatorio = 12345.89
-
-

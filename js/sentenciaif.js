@@ -1,6 +1,3 @@
-
-//debugger
-//let claseN2 = "control de flujo"
 let claseN2 =prompt("ingrese su clase:")
 if (claseN2 =="control de flujo"){
     console.log ("bienvenido", claseN2)
@@ -8,7 +5,6 @@ if (claseN2 =="control de flujo"){
     console.warn("no se reconoce el usuario")
 }
 
-//IF - ELSE IF
 let edad = prompt("ingrese su edad")
 
 if (edad <= 16){

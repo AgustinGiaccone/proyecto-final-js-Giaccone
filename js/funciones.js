@@ -1,4 +1,3 @@
-
 function saludoDirecto(){
     alert("hola ", fullname)
 }
@@ -22,27 +21,12 @@ function calcularunidades(){
     console.log(nroaleatorio)
 }
 
-
 const cerramosClase = function (){
     console.warn("Ya se termino la clase.")
 }
 
 cerramosClase()
 
-
-// const yaeslahora = ()=> {
-
-// }
-
-// yaeslahora()
-
-// const yaeslahora = (par1, par2) => {
-
-// }
-
 const devolverresultado = (par1) => {
     return param1 * 1.25
 }
-
-//const devolverresultado = par1 => par1 * 1.25
-
