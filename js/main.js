@@ -1,3 +1,25 @@
+const productos = ['Hamburguesa Rellena De Queso Envuelta En Tocino', 'Brochet de hamburguesa', 'Hamburguesa de mar y tierra', 'Hamburguesa a la parrilla con huevo estrellado', 'Hamburguesa con Salsa de 3 Quesos', 'Hamburguesa hawaiana']
+const carrito = []
+const titulo = document.getElementById("titulo")
+const listadoFrutas = document.getElementById("listadoFrutas")
+const listadoCarrito = document.getElementById("listadoCarrito")
+
+titulo.innerText = "RESTO-BAR"
+
+const h1 = document.querySelector("h1")
+        h1.onclick = ()=> {
+            alert("Desea ir al Inicio?")
+        }
+        h1.addEventListener("click", ()=>{
+            alert("Desea ir al Inicio?")
+        })
+
+function operadorTernario (){
+    let userName = "RESTO-BAR"
+let mensaje = userName === "RESTO-BAR" ? "Bienvenid@ a nuestro Humilde " + userName : "No se reconoce el usuario."
+    alert (mensaje)
+}
+
 function cargarProductos() {
     listadoFrutas.innerHTML = ""
     for (const producto of productos) {
@@ -18,7 +40,7 @@ function agregarAlCarrito(prod) {
         carrito.push(prod)
         guradoCarrito()
         const liNuevoProducto = document.createElement("li")
-              liNuevoProducto.className = "collection-item green-text"
+              liNuevoProducto.className = "collection-item red-text"
               liNuevoProducto.innerText = prod
               liNuevoProducto.id = prod + "EnCarrito"
               liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) }) 
