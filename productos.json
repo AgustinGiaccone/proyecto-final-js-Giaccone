@@ -3,7 +3,7 @@
         "producto": "hamburguesa",
         "precio": 200,
         "info": "info de la hamburguesa",
-        "imagen": "./images/hamburguesa.jpg"
+        "imagen": "./images/hamburguesa rellena de queso envuelta en tocino.jpg"
     },
     {
         "producto": "papas",

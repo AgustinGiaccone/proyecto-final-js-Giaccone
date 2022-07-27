@@ -4,12 +4,40 @@ const pedirPosts = async () => {
     const resp = await fetch('../productos.json')
     const data = await resp.json()
     data.forEach((post) => {
-        const li = document.createElement("li")
-            li.className = "collection-item blue-text"
-            li.innerText = `${post.producto}`
-            li.id = `${post.producto}` + "Prod"
-            li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
-            lista.append(li)
+        const div1 = document.createElement("div")
+            div1.className = "row"
+        const div2 = document.createElement("div")
+            div2.className = "four columns"
+        const div3 = document.createElement("div")
+            div3.className = "card"
+        const img = document.createElement("img")
+            img.src = `${post.imagen}`
+            img.className = "u-full-width"
+        const div4 = document.createElement("div")
+            div4.className = "info-card"
+        const h4 = document.createElement("h4")
+            h4.innerText = `${post.producto}`
+        const p1 = document.createElement("p")
+            p1.innerText = `${post.info}`
+        const precio = document.createElement("p")
+            precio.className = "precio"
+            precio.innerText = `$ ${post.precio}`
+        const comprar = document.createElement("a")
+            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${post.producto}`) } )
+            comprar.innerText = "Agregar al carrito"
+            div1.appendChild(div2)
+            div2.appendChild(div3)
+            div3.appendChild(img)
+            div3.appendChild(div4)
+            div4.appendChild(h4)
+            div4.appendChild(p1)
+            div4.appendChild(precio)
+            div4.appendChild(comprar)
+            lista.append(div1)
+            // li.innerText = `${post.producto}`
+            // li.id = `${post.producto}` + "Prod"
+            // li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
+            // lista.append(li)
     })
 }
 
