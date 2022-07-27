@@ -1,4 +1,21 @@
-const productos = ['Hamburguesa Rellena De Queso Envuelta En Tocino', 'Brochet de hamburguesa', 'Hamburguesa de mar y tierra', 'Hamburguesa a la parrilla con huevo estrellado', 'Hamburguesa con Salsa de 3 Quesos', 'Hamburguesa hawaiana']
+const lista = document.querySelector('#listado')
+
+const pedirPosts = async () => {
+    const resp = await fetch('../productos.json')
+    const data = await resp.json()
+    data.forEach((post) => {
+        const li = document.createElement("li")
+            li.className = "collection-item blue-text"
+            li.innerText = `${post.producto}`
+            li.id = `${post.producto}` + "Prod"
+            li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
+            lista.append(li)
+    })
+}
+
+pedirPosts()
+
+// const productos = ["hamburguesa", "papita", "soda"]
 const carrito = []
 const titulo = document.getElementById("titulo")
 const listadoFrutas = document.getElementById("listadoFrutas")
@@ -20,19 +37,19 @@ let mensaje = userName === "RESTO-BAR" ? "Bienvenid@ a nuestro Humilde " + userN
     alert (mensaje)
 }
 
-function cargarProductos() {
-    listadoFrutas.innerHTML = ""
-    for (const producto of productos) {
-        const li = document.createElement("li")
-              li.className = "collection-item blue-text"
-              li.innerText = producto
-              li.id = producto + "Prod"
-              li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
-              listadoFrutas.append(li)
-    }
-}
+// function cargarProductos() {
+//     listadoFrutas.innerHTML = ""
+//     for (const producto of productos) {
+//         const li = document.createElement("li")
+//               li.className = "collection-item blue-text"
+//               li.innerText = producto
+//               li.id = producto + "Prod"
+//               li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
+//               listadoFrutas.append(li)
+//     }
+// }
 
-cargarProductos()
+// cargarProductos()
 
 function agregarAlCarrito(prod) {
     

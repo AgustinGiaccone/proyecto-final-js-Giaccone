@@ -1,19 +1,17 @@
-{
-    "productos": [
-        {
-            "producto": "hamburguesa",
-            "precio": 200,
-            "info": "info de la hamburguesa"
-        },
-        {
-            "producto": "papas",
-            "precio": 150,
-            "info": "info de la papas"
-        },
-        {
-            "producto": "gaseosa",
-            "precio": 100,
-            "info": "info de la gaseosa"
-        }
-    ]
-}
+[
+    {
+        "producto": "hamburguesa",
+        "precio": 200,
+        "info": "info de la hamburguesa"
+    },
+    {
+        "producto": "papas",
+        "precio": 150,
+        "info": "info de la papas"
+    },
+    {
+        "producto": "gaseosa",
+        "precio": 100,
+        "info": "info de la gaseosa"
+    }
+]
