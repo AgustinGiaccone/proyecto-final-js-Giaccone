@@ -359,7 +359,7 @@ form {
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.u-full-width {
+/* .u-full-width {
   width: 100%;
   box-sizing: border-box; }
 .u-max-full-width {
@@ -368,7 +368,7 @@ form {
 .u-pull-right {
   float: right; }
 .u-pull-left {
-  float: left; }
+  float: left; } */
 
 
 /* Misc

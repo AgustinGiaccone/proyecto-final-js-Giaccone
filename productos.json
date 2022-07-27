@@ -12,6 +12,24 @@
         "imagen": "./images/papas.jpg"
     },
     {
+        "producto": "hamburguesasassss",
+        "precio": 150,
+        "info": "info de la papas",
+        "imagen": "./images/papas.jpg"
+    },
+    {
+        "producto": "papas",
+        "precio": 150,
+        "info": "info de la papas",
+        "imagen": "./images/papas.jpg"
+    },
+    {
+        "producto": "papas",
+        "precio": 150,
+        "info": "info de la papas",
+        "imagen": "./images/papas.jpg"
+    },
+    {
         "producto": "gaseosa",
         "precio": 100,
         "info": "info de la gaseosa",
