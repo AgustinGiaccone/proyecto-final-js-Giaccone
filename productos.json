@@ -2,16 +2,19 @@
     {
         "producto": "hamburguesa",
         "precio": 200,
-        "info": "info de la hamburguesa"
+        "info": "info de la hamburguesa",
+        "imagen": "./images/hamburguesa.jpg"
     },
     {
         "producto": "papas",
         "precio": 150,
-        "info": "info de la papas"
+        "info": "info de la papas",
+        "imagen": "./images/papas.jpg"
     },
     {
         "producto": "gaseosa",
         "precio": 100,
-        "info": "info de la gaseosa"
+        "info": "info de la gaseosa",
+        "imagen": "./images/gaseosa.jpg"
     }
 ]

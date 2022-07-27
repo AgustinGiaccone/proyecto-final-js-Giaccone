@@ -18,7 +18,7 @@ pedirPosts()
 // const productos = ["hamburguesa", "papita", "soda"]
 const carrito = []
 const titulo = document.getElementById("titulo")
-const listadoFrutas = document.getElementById("listadoFrutas")
+// const listadoFrutas = document.getElementById("listadoFrutas")
 const listadoCarrito = document.getElementById("listadoCarrito")
 
 titulo.innerText = "RESTO-BAR"
