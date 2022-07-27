@@ -48,12 +48,6 @@ p, li {
     padding: 10px;
     float: left;
 }
-/* .row{
-    float: left;
-} */
-/* .collection-item {
-    line-height: 2em !important;
-} */
 
 .color-carrito {
     background-color: aliceblue;
@@ -76,16 +70,9 @@ p, li {
 }
 
 
-/* footer{
-    background-color: darkseagreen;
-} */
-/* .usrt{
-    color: rgb(255, 255, 255);
-} */
-
 .card {
     text-align: center;
-    box-shadow: 0 25px 98px 0 rgb(1, 48, 1);
+    box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
     background: rgb(37, 97, 37);
     border-radius: 10px;
 }
@@ -113,4 +100,29 @@ p, li {
     font-size: 20px;
     margin-top: 10px;
 }
+
+body{
+    background-color: rgb(12, 99, 70);
+}
+h1#titulo{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+img.responsive-img {
+    width: 200px;
+    text-align: center;
+}
+
+img.u-full-width{
+    width: 250px;
+}
+
+.card{
+    background-color: rgb(10, 10, 12);
+    display: table;
+
+}
+
 
