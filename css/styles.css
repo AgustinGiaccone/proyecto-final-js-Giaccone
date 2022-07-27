@@ -10,11 +10,12 @@ body{
 }
 form {
     padding: 2em;
+    text-align: center;
 }
 
 
 .color-formulario {
-    background-color: whitesmoke;
+    background-color: rgb(151, 19, 19);
 }
 
 h1, h2, h3 {
@@ -27,9 +28,9 @@ p, li {
     font-size: 1.2em;
 }
 
-.collection-item {
+/* .collection-item {
     line-height: 2em !important;
-}
+} */
 
 .color-carrito {
     background-color: aliceblue;
@@ -47,16 +48,17 @@ p, li {
 .fondo-inputs {
     background-color: aquamarine !important;
 }
-.responsive-img{
+/* .responsive-img{
     width: 200px;
-}
+} */
 
-footer{
+
+/* footer{
     background-color: darkseagreen;
-}
-.usrt{
+} */
+/* .usrt{
     color: rgb(255, 255, 255);
-}
+} */
 .card {
     text-align: center;
     box-shadow: 0 25px 98px 0 rgb(1, 48, 1);
@@ -87,16 +89,3 @@ footer{
     margin-top: 10px;
 }
 
-
-/* Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* .u-full-width {
-    width: 100%;
-    box-sizing: border-box; }
-  .u-max-full-width {
-    max-width: 100%;
-    box-sizing: border-box; }
-  .u-pull-right {
-    float: right; }
-  .u-pull-left {
-    float: left; } */
