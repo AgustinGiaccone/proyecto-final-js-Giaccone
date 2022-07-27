@@ -27,7 +27,22 @@ h1, h2, h3 {
 p, li {
     font-size: 1.2em;
 }
-
+.u-full-width{
+    text-align: right;
+    width: 146px;
+}
+.formato{
+    padding: 10px;
+    overflow: hidden;
+}
+.row{
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+/* .row{
+    float: left;
+} */
 /* .collection-item {
     line-height: 2em !important;
 } */
@@ -48,9 +63,9 @@ p, li {
 .fondo-inputs {
     background-color: aquamarine !important;
 }
-/* .responsive-img{
+.responsive-img{
     width: 200px;
-} */
+}
 
 
 /* footer{
@@ -59,6 +74,7 @@ p, li {
 /* .usrt{
     color: rgb(255, 255, 255);
 } */
+
 .card {
     text-align: center;
     box-shadow: 0 25px 98px 0 rgb(1, 48, 1);
