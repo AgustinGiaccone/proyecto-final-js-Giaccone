@@ -112,18 +112,6 @@ function guradoCarrito() {
     }
 }
 
-
-// function reuperoCarrito(){
-//     let miCarrito
-//     if (miCarrito = JSON.parse(localStorage.getItem("carrito"))) {
-//         miCarrito.forEach(hambur => {
-//             carrito.push(hambur)
-//         });
-//     }
-// }
-
-// reuperoCarrito()
-
 function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
 }
