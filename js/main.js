@@ -137,3 +137,19 @@ const botonContador = document.getElementById('contador_carrito')
 
 const botonCerrar = document.getElementById('cerrarCarrito')
     botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
+
+const sweetcomprar = document.querySelector(".material-icons").addEventListener('click', function(){
+        Swal.fire({
+            toast: true,
+            icon: 'success',
+            title: 'Gracias por su compra, espero que la difrute',
+            // animation: false,
+            position: 'top',
+            timer: 2500,
+        })})
+
+
+
+    // document.querySelector(".material-icons").addEventListener('click', function(){
+    //     Swal.fire("Our First Alert");
+    //   });

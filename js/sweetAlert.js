@@ -4,7 +4,7 @@ const swa = () => {
         text: 'No se encontro el servidor',
         icon: 'error',
         confirmButtonText: 'fail'
-      })
+    })
 }
 
 
@@ -29,3 +29,4 @@ const FormSubm = (mensaje) => {
         timer:2500
     })
 }
+
