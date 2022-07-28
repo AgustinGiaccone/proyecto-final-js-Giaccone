@@ -25,7 +25,16 @@ const pedirPosts = async () => {
             precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
             comprar.id = "pedido"
-            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`)} )
+            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`),
+            Swal.fire({
+                toast: true,
+                icon: 'success',
+                title: 'Se agrego al carrito',
+                // animation: false,
+                position: 'top',
+                timer: 1500,
+                showConfirmButton: false,
+            })} )
             comprar.innerText = "Agregar al carrito"
             div1.appendChild(div2)
             div2.appendChild(div3)
@@ -88,9 +97,20 @@ function agregarAlCarrito(producto,precio,emoji) {
     // guradoCarrito()
     const liNuevoProducto = document.createElement("li")
         liNuevoProducto.className = "collection-item red-text"
-        liNuevoProducto.innerText = " $" + precio + " " + producto + " " + emoji
+        liNuevoProducto.innerHTML = "<b>$" + precio + " " + producto + " " + emoji +"</b><b id=eliminarProducto class=textoRojo> X</b>"
         liNuevoProducto.id = producto
-        liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) })
+        // const eliminarProducto = document.getElementById("eliminarProducto")
+        // eliminarProducto.addEventListener("click", ()=> { removerDelCarrito(`${liNuevoProducto.id}`)})
+        liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`),
+        Swal.fire({
+            toast: true,
+            icon: 'error',
+            title: 'Se quito del carrito',
+            // animation: false,
+            position: 'top',
+            timer: 1500,
+            showConfirmButton: false,
+        }) })
         listadoCarrito.append(liNuevoProducto)
 
 }
@@ -127,15 +147,6 @@ function guradoCarrito() {
 
 function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
-    Swal.fire({
-        toast: true,
-        icon: 'success',
-        title: 'Se agrego al carrito',
-        // animation: false,
-        position: 'top',
-        timer: 1500,
-        showConfirmButton: false,
-    })
 }
 // contadorCarrito()
 
