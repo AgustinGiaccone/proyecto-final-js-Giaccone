@@ -65,11 +65,18 @@ p, li {
 .fondo-inputs {
     background-color: aquamarine !important;
 }
+.responsive-img-logo{
+    max-width: 180px;
+    max-height: 180px;
+}
 .responsive-img{
-    width: 200px;
+    max-width: 30px;
+    max-height: 30px;
 }
 
-
+button.green{
+    background-color: rgb(12, 99, 70);
+}
 .card {
     text-align: center;
     box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
@@ -124,5 +131,5 @@ img.u-full-width{
     display: table;
 
 }
-/* 
+/*
  */
