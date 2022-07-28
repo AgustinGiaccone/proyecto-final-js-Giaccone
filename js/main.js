@@ -24,7 +24,7 @@ const pedirPosts = async () => {
             precio.className = "precio"
             precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
-            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`), contadorCarrito()} )
+            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`)} )
             comprar.innerText = "Agregar al carrito"
             div1.appendChild(div2)
             div2.appendChild(div3)
@@ -45,7 +45,7 @@ const pedirPosts = async () => {
 pedirPosts()
 
 // const productos = ["hamburguesa", "papita", "soda"]
-const carrito = []
+var carrito = []
 const titulo = document.getElementById("titulo")
 // const listadoFrutas = document.getElementById("listadoFrutas")
 const listadoCarrito = document.getElementById("listadoCarrito")
@@ -82,25 +82,29 @@ const listadoCarrito = document.getElementById("listadoCarrito")
 // cargarProductos()
 
 function agregarAlCarrito(producto,precio,emoji) {
-    guradoCarrito()
+    carrito.push(producto)
+    contadorCarrito()
+    // guradoCarrito()
     const liNuevoProducto = document.createElement("li")
         liNuevoProducto.className = "collection-item red-text"
         liNuevoProducto.innerText = " $" + precio + " " + producto + " " + emoji
-        liNuevoProducto.id = producto + "EnCarrito"
+        liNuevoProducto.id = producto
         liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) })
         listadoCarrito.append(liNuevoProducto)
 
 }
 
 
-function removerDelCarrito(prod) {
-    const productoAremover = document.getElementById(`${prod}`)
-          productoAremover.remove()
-          item = carrito.indexOF(productoAremover.innerText)
-          if (item >= 0) {
-            carrito.splice(item, 1)
-            guradoCarrito()
-          }
+function removerDelCarrito(producto) {
+    const productoAremover = document.getElementById(`${producto}`)
+        // productoAremover = "papas)"
+        productoAremover.remove()
+        item = carrito.indexOf(producto)
+        if (item >= 0) {
+        carrito.splice(item, 1)
+        contadorCarrito()
+        // guradoCarrito()
+        }
 }
 function guradoCarrito() {
     if (carrito.length > 0) {
@@ -109,16 +113,16 @@ function guradoCarrito() {
 }
 
 
-function reuperoCarrito(){
-    let miCarrito
-    if (miCarrito = JSON.parse(localStorage.getItem("carrito"))) {
-        miCarrito.forEach(hambur => {
-            carrito.push(hambur)
-        });
-    }
-}
+// function reuperoCarrito(){
+//     let miCarrito
+//     if (miCarrito = JSON.parse(localStorage.getItem("carrito"))) {
+//         miCarrito.forEach(hambur => {
+//             carrito.push(hambur)
+//         });
+//     }
+// }
 
-reuperoCarrito()
+// reuperoCarrito()
 
 function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
@@ -127,6 +131,9 @@ contadorCarrito()
 
 const botonComprar = document.getElementById('botonCarrito')
     botonComprar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
+
+const botonContador = document.getElementById('contador_carrito')
+    botonContador.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
 
 const botonCerrar = document.getElementById('cerrarCarrito')
     botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
