@@ -99,8 +99,9 @@ function agregarAlCarrito(producto,precio,emoji) {
         liNuevoProducto.className = "collection-item red-text"
         liNuevoProducto.innerHTML = "<b>$" + precio + " " + producto + " " + emoji +"</b><b id=eliminarProducto class=textoRojo> X</b>"
         liNuevoProducto.id = producto
-        // const eliminarProducto = document.getElementById("eliminarProducto")
-        // eliminarProducto.addEventListener("click", ()=> { removerDelCarrito(`${liNuevoProducto.id}`)})
+        listadoCarrito.append(liNuevoProducto)
+        const eliminarProducto = document.getElementById("eliminarProducto")
+        eliminarProducto.addEventListener("click", ()=> { removerDelCarrito(producto)
         liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`),
         Swal.fire({
             toast: true,
@@ -110,10 +111,8 @@ function agregarAlCarrito(producto,precio,emoji) {
             position: 'top',
             timer: 1500,
             showConfirmButton: false,
-        }) })
-        listadoCarrito.append(liNuevoProducto)
-
-}
+        })
+})})}
 
 
 function removerDelCarrito(producto) {
