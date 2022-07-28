@@ -131,8 +131,23 @@ img.u-full-width{
     display: table;
 
 }
-#cerrarCarrito{
-    text-align: left;
+a#cerrarCarrito{
+    color: red;
+    text-align: center;
 }
-/*
- */
+.pedido{
+    color: white;
+    text-decoration: none;
+}
+
+#carrito{
+    margin: 5px;
+    margin-left: 550px;
+    padding: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+    height: auto;
+    background-color: rgb(148, 202, 200);
+    box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
+    border-radius: 5px;
+}

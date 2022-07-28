@@ -24,6 +24,7 @@ const pedirPosts = async () => {
             precio.className = "precio"
             precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
+            comprar.id = "pedido"
             comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`)} )
             comprar.innerText = "Agregar al carrito"
             div1.appendChild(div2)
@@ -126,8 +127,17 @@ function guradoCarrito() {
 
 function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
+    Swal.fire({
+        toast: true,
+        icon: 'success',
+        title: 'Se agrego al carrito',
+        // animation: false,
+        position: 'top',
+        timer: 1500,
+        showConfirmButton: false,
+    })
 }
-contadorCarrito()
+// contadorCarrito()
 
 const botonComprar = document.getElementById('botonCarrito')
     botonComprar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
@@ -138,15 +148,21 @@ const botonContador = document.getElementById('contador_carrito')
 const botonCerrar = document.getElementById('cerrarCarrito')
     botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
 
-const sweetcomprar = document.querySelector(".material-icons").addEventListener('click', function(){
-        Swal.fire({
-            toast: true,
-            icon: 'success',
-            title: 'Gracias por su compra, espero que la difrute',
-            // animation: false,
-            position: 'top',
-            timer: 2500,
-        })})
+const sweetComprar = document.querySelector(".material-icons").addEventListener('click', function(){
+    Swal.fire({
+        toast: true,
+        icon: 'success',
+        title: 'Gracias por su compra, espero que la difrute',
+        // animation: false,
+        position: 'top',
+        timer: 2500,
+    })})
+
+// const sweetAgregado = document.getElementById("pedido").addEventListener('click', function(){
+//     Swal.fire({
+//         title: 'se agrego al carrito',
+//         timer: 2000,
+//     })})
 
 
 
