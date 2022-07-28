@@ -1,20 +1,23 @@
 [
     {
-        "producto": "hamburguesa",
+        "nombre": "hamburguesa",
         "precio": 200,
         "info": "info de la hamburguesa",
-        "imagen": "./images/hamburguesa rellena de queso envuelta en tocino.jpg"
+        "imagen": "./images/hamburguesa rellena de queso envuelta en tocino.jpg",
+        "emoji": "🍔"
     },
     {
-        "producto": "papas",
+        "nombre": "papas",
         "precio": 150,
         "info": "info de la papas",
-        "imagen": "./images/papas.jpg"
+        "imagen": "./images/papas.jpg",
+        "emoji": "🍟"
     },
     {
-        "producto": "gaseosa",
+        "nombre": "gaseosa",
         "precio": 100,
         "info": "info de la gaseosa",
-        "imagen": "./images/gaseosa.jpg"
+        "imagen": "./images/gaseosa.jpg",
+        "emoji": "🥤"
     }
 ]

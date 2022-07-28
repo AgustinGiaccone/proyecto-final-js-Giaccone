@@ -1,9 +1,10 @@
 const lista = document.querySelector('#listado')
+var carritoAbierto = false
 
 const pedirPosts = async () => {
     const resp = await fetch('../productos.json')
     const data = await resp.json()
-    data.forEach((post) => {
+    data.forEach((producto) => {
         const div1 = document.createElement("div")
             div1.className = "row"
         const div2 = document.createElement("div")
@@ -11,19 +12,19 @@ const pedirPosts = async () => {
         const div3 = document.createElement("div")
             div3.className = "card"
         const img = document.createElement("img")
-            img.src = `${post.imagen}`
+            img.src = `${producto.imagen}`
             img.className = "u-full-width"
         const div4 = document.createElement("div")
             div4.className = "info-card"
         const h4 = document.createElement("h4")
-            h4.innerText = `${post.producto}`
+            h4.innerText = `${producto.nombre}`
         const p1 = document.createElement("p")
-            p1.innerText = `${post.info}`
+            p1.innerText = `${producto.info}`
         const precio = document.createElement("p")
             precio.className = "precio"
-            precio.innerText = `$ ${post.precio}`
+            precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
-            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${post.producto}`) } )
+            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`), contadorCarrito()} )
             comprar.innerText = "Agregar al carrito"
             div1.appendChild(div2)
             div2.appendChild(div3)
@@ -49,21 +50,22 @@ const titulo = document.getElementById("titulo")
 // const listadoFrutas = document.getElementById("listadoFrutas")
 const listadoCarrito = document.getElementById("listadoCarrito")
 
-titulo.innerText = "RESTO-BAR"
 
-const h1 = document.querySelector("h1")
-        h1.onclick = ()=> {
-            alert("Desea ir al Inicio?")
-        }
-        h1.addEventListener("click", ()=>{
-            alert("Desea ir al Inicio?")
-        })
+// titulo.innerText = "RESTO-BAR"
 
-function operadorTernario (){
-    let userName = "RESTO-BAR"
-let mensaje = userName === "RESTO-BAR" ? "Bienvenid@ a nuestro Humilde " + userName : "No se reconoce el usuario."
-    alert (mensaje)
-}
+// const h1 = document.querySelector("h1")
+//         h1.onclick = ()=> {
+//             alert("Desea ir al Inicio?")
+//         }
+//         h1.addEventListener("click", ()=>{
+//             alert("Desea ir al Inicio?")
+//         })
+
+// function operadorTernario (){
+//     let userName = "RESTO-BAR"
+// let mensaje = userName === "RESTO-BAR" ? "Bienvenid@ a nuestro Humilde " + userName : "No se reconoce el usuario."
+//     alert (mensaje)
+// }
 
 // function cargarProductos() {
 //     listadoFrutas.innerHTML = ""
@@ -79,18 +81,15 @@ let mensaje = userName === "RESTO-BAR" ? "Bienvenid@ a nuestro Humilde " + userN
 
 // cargarProductos()
 
-function agregarAlCarrito(prod) {
-    
-    if (prod.trim() !== "") {
-        carrito.push(prod)
-        guradoCarrito()
-        const liNuevoProducto = document.createElement("li")
-              liNuevoProducto.className = "collection-item red-text"
-              liNuevoProducto.innerText = prod
-              liNuevoProducto.id = prod + "EnCarrito"
-              liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) }) 
-              listadoCarrito.append(liNuevoProducto)
-    }
+function agregarAlCarrito(producto,precio,emoji) {
+    guradoCarrito()
+    const liNuevoProducto = document.createElement("li")
+        liNuevoProducto.className = "collection-item red-text"
+        liNuevoProducto.innerText = " $" + precio + " " + producto + " " + emoji
+        liNuevoProducto.id = producto + "EnCarrito"
+        liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) })
+        listadoCarrito.append(liNuevoProducto)
+
 }
 
 
@@ -120,3 +119,14 @@ function reuperoCarrito(){
 }
 
 reuperoCarrito()
+
+function contadorCarrito(){
+    document.getElementById('contador_carrito').innerText = carrito.length;
+}
+contadorCarrito()
+
+const botonComprar = document.getElementById('botonCarrito')
+    botonComprar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
+
+const botonCerrar = document.getElementById('cerrarCarrito')
+    botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
