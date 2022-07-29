@@ -5,6 +5,8 @@ var carrito = []
 const titulo = document.getElementById("titulo")
 const listadoCarrito = document.getElementById("listadoCarrito")
 
+/*se definen los botones que al hacer click otros elementos en pantalla
+*/
 const botonComprar = document.getElementById('botonCarrito')
     botonComprar.addEventListener("click", ()=> {
         document.getElementById('carrito').style.display = 'block'; })
@@ -17,6 +19,12 @@ const botonCerrar = document.getElementById('cerrarCarrito')
     botonCerrar.addEventListener("click", ()=> {
         document.getElementById('carrito').style.display = 'none'; })
 
+/* recorre el array que obtine de productos.json,
+crea la tarjeta utilizando los parametros de cada producto,
+agrega eventos de click al elemento a "agregar al carrito"
+que llama a la funcion agregarAlCarrito() pasando como parametro
+los obtenidos en el array
+*/
 const mostrarProductos = async () => {
     const resp = await fetch('../productos.json')
     const data = await resp.json()
@@ -40,18 +48,18 @@ const mostrarProductos = async () => {
             precio.className = "precio"
             precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
+            comprar.innerText = "Agregar al carrito"
             comprar.id = "pedido"
             comprar.addEventListener("click", ()=> {
                 agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`),
                 Swal.fire({
                     toast: true,
                     icon: 'success',
-                    title: 'Se agrego al carrito',
+                    title: 'Se agrego una/ '+`${producto.nombre}`+' al carrito',
                     position: 'top',
                     timer: 1500,
                     showConfirmButton: false
             })} )
-            comprar.innerText = "Agregar al carrito"
             row.appendChild(fourColumns)
             fourColumns.appendChild(card)
             card.appendChild(img)
@@ -66,7 +74,12 @@ const mostrarProductos = async () => {
             preciototal()
     })
 }
-
+/*
+recibe como argumento el nombre, precio y emoji del producto
+cuando se agrega al carrito un producto.
+suma el costo del producto, lo agrega a la array carrito,
+actualiza el contador y crea el elemtento HTML en el div carrito
+*/
 function agregarAlCarrito(producto,precio,emoji) {
     sumarTotal(parseInt(precio))
     carrito.push(producto)
@@ -80,6 +93,10 @@ function agregarAlCarrito(producto,precio,emoji) {
         eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto,precio)
 })}
 
+/*
+elimina el producto selecionado en el carrito,
+y descuenta el precio del producto eliminado
+*/
 function removerDelCarrito(producto,precio) {
     const productoAremover = document.getElementById(`${producto}`)
         productoAremover.remove()
@@ -90,11 +107,6 @@ function removerDelCarrito(producto,precio) {
         sumarTotal(0-precio)
         }
 }
-function guradoCarrito() {
-    if (carrito.length > 0) {
-        localStorage.setItem("carrito", JSON.stringify(carrito))
-    }
-}
 
 function contadorCarrito(){
     document.getElementById('contadorCarrito').innerText = carrito.length;
@@ -102,7 +114,9 @@ function contadorCarrito(){
     botonVaciar()
     preciototal()
 }
-
+/*
+se define el boton comprar los producto generenado un sweetalert
+*/
 function comprarBoton(){
     const sweetComprar = document.getElementById('botonComprar')
 if(carrito.length > 0){
@@ -119,7 +133,9 @@ sweetComprar.addEventListener('click', function(){
         timer: 2500,
     })})
 }
-
+/*
+se define el borton vaciar que se ejeuta junto con la funcion vaciarCarrito()
+*/
 function botonVaciar(){
     const sweetVaciar = document.getElementById('botonVaciar')
 if(carrito.length > 0){
@@ -128,7 +144,9 @@ if(carrito.length > 0){
     sweetVaciar.style.display = 'none'
 }
 }
-
+/*
+elimina todo los productos que se encuantran el el carrito
+*/
 function vaciarCarrito(){
     carrito.forEach(producto => {
         document.getElementById(`${producto}`).remove()
@@ -138,12 +156,16 @@ function vaciarCarrito(){
     total=0
     contadorCarrito()
 }
-
+/*
+suma los precios de los productos selecionados 
+*/
 function sumarTotal(precio){
     total = total+precio
     document.getElementById("total").innerText="Total: $"+total
 }
-
+/*
+se muestra en pantalla el precio obtenidos por los productos siempre y cuando se encuenten en el carrito
+*/
 function preciototal(){
     const total = document.getElementById('total')
 if(carrito.length > 0){
