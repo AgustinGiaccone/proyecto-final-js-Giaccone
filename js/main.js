@@ -185,7 +185,7 @@ function vaciarCarrito(){
 
 function sumarTotal(precio){
     total = total+precio
-    document.getElementById("total").innerText=total
+    document.getElementById("total").innerText="total: $"+total
 }
 
 function preciototal(){

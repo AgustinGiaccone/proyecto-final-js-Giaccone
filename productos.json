@@ -1,22 +1,22 @@
 [
     {
-        "nombre": "hamburguesa",
+        "nombre": "Hamburguesa",
         "precio": 200,
-        "info": "info de la hamburguesa",
+        "info": "Lo que toda persona desea en su hamburguesa",
         "imagen": "./images/hamburguesa rellena de queso envuelta en tocino.jpg",
         "emoji": "🍔"
     },
     {
-        "nombre": "papas",
+        "nombre": "Papas",
         "precio": 150,
-        "info": "info de la papas",
+        "info": "Doradas, crujientes y del tamano ideal",
         "imagen": "./images/papas.jpg",
         "emoji": "🍟"
     },
     {
-        "nombre": "gaseosa",
+        "nombre": "Gaseosa",
         "precio": 100,
-        "info": "info de la gaseosa",
+        "info": "Coca cola, Sprite, Fanta, Pepsi",
         "imagen": "./images/gaseosa.jpg",
         "emoji": "🥤"
     }

@@ -5,24 +5,24 @@ div, form {
     margin-left: 5%;
     margin-right: 5%;
 }
-body{
+/* body{
     background-color: rgb(7, 17, 61);
-}
-form {
+} */
+/* form {
     padding: 2em;
     text-align: center;
-}
+} */
 
 
-.color-formulario {
+/* .color-formulario {
     background-color: rgb(151, 19, 19);
-}
+} */
 
-h1, h2, h3 {
+/* h1, h2, h3 {
     font-size: xx-large;
     color: bisque;
     text-align: center;
-}
+} */
 
 p, li {
     font-size: 1.2em;
@@ -49,22 +49,22 @@ p, li {
     float: left;
 }
 
-.color-carrito {
+/* .color-carrito {
     background-color: aliceblue;
-}
+} */
 
-.carrito {
+/* #carrito {
     border-color: whitesmoke;
     padding: 5px;
-}
+} */
 
-.italica-carrito {
+/* .italica-carrito {
     font-style: italic;
-}
+} */
 
-.fondo-inputs {
+/* .fondo-inputs {
     background-color: aquamarine !important;
-}
+} */
 .responsive-img-logo{
     max-width: 180px;
     max-height: 180px;
@@ -74,9 +74,9 @@ p, li {
     max-height: 30px;
 }
 
-button.green{
+/* button.green{
     background-color: rgb(12, 99, 70);
-}
+} */
 .card {
     text-align: center;
     box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
@@ -86,36 +86,34 @@ button.green{
 
 @media (min-width: 550px){
     .card{
-        text-align: left;
+        text-align: center;
     }
 }
 
 .info-card {
-    padding: 10px 20px;
-    color: white;
-
+    padding: 10px 0px;
+    color: rgb(255, 255, 255);
 }
 
-.info-card p,
+/* .info-card p,
 .card h4 {
     margin-bottom: 5px;
     width: 150px;
-
-}
+} */
 
 .info-card .precio {
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
 body{
     background-color: rgb(12, 99, 70);
 }
-h1#titulo{
+/* h1#titulo{
     font-size: 40px;
     text-align: center;
     color: rgb(0, 0, 0);
-}
+} */
 
 img.responsive-img {
     width: 200px;
@@ -127,24 +125,25 @@ img.u-full-width{
 }
 
 .card{
+    width: 200px;
     background-color: rgb(10, 10, 12);
     display: table;
-
 }
 h5.textoRojo{
     display: block;
     color: red;
+    font-size: 16px;
     text-align: right;
 }
 b.textoRojo{
-    /* display: block; */
+    display: inline;
     color: red;
     /* text-align: right; */
 }
-.pedido{
+/* .pedido{
     color: white;
     text-decoration: none;
-}
+} */
 
 #carrito{
     display: flex;
@@ -155,19 +154,20 @@ b.textoRojo{
     padding-top: 2px;
     padding-left: 10px;
     height: auto;
-    background-color: rgb(148, 202, 200);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
     border-radius: 5px;
 }
 @media (max-width: 800px){
     #carrito{
-        margin: auto;
+        display: flex;
+        margin: 20px;
         margin-left: auto;
         padding: 10px;
         padding-top: 2px;
         padding-left: 10px;
         height: auto;
-        background-color: rgb(148, 202, 200);
+        background-color: rgb(255, 255, 255);
         box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
         border-radius: 5px;
 }
@@ -177,6 +177,30 @@ i.material-icons{
     display: block;
     text-align: center;
     text-decoration: none   ;
+}
+#botonCarrito{
+    background-color: rgb(12, 99, 70);
+    border: 0px;
+    margin: 1px;
+}
+#contador_carrito{
+    background-color: rgb(37, 68, 58);
+}
+
+b#total{
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+
+#botonvaciar{
+    text-decoration: inherit;
+    border: 0px;
+}
+#botonComprar{
+    text-decoration: inherit;
+    border: 0px;
 }
 /* i#botonComprar{
     display: block;
