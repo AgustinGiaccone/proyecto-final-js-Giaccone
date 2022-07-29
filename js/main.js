@@ -45,6 +45,8 @@ const pedirPosts = async () => {
             div4.appendChild(precio)
             div4.appendChild(comprar)
             lista.append(div1)
+            comprarBoton()
+            botonVaciar()
             // li.innerText = `${post.producto}`
             // li.id = `${post.producto}` + "Prod"
             // li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
@@ -102,11 +104,11 @@ function agregarAlCarrito(producto,precio,emoji) {
         listadoCarrito.append(liNuevoProducto)
         const eliminarProducto = document.querySelectorAll('b.textoRojo')
         eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto)
+        
 })}
 
 
 function removerDelCarrito(producto) {
-    console.log(typeof producto)
     const productoAremover = document.getElementById(`${producto}`)
         // productoAremover = "papas)"
         productoAremover.remove()
@@ -114,6 +116,7 @@ function removerDelCarrito(producto) {
         if (item >= 0) {
         carrito.splice(item, 1)
         contadorCarrito()
+        
         // guradoCarrito()
         }
 }
@@ -137,6 +140,8 @@ function guradoCarrito() {
 
 function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
+    comprarBoton()
+    botonVaciar()
 }
 // contadorCarrito()
 
@@ -149,7 +154,14 @@ const botonContador = document.getElementById('contador_carrito')
 const botonCerrar = document.getElementById('cerrarCarrito')
     botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
 
-const sweetComprar = document.querySelector(".material-icons").addEventListener('click', function(){
+function comprarBoton(){
+    const sweetComprar = document.getElementById('botonComprar')
+if(carrito.length > 0){
+    sweetComprar.style.display = 'block'
+}else{
+    sweetComprar.style.display = 'none'
+}
+sweetComprar.addEventListener('click', function(){
     Swal.fire({
         toast: true,
         icon: 'success',
@@ -158,6 +170,27 @@ const sweetComprar = document.querySelector(".material-icons").addEventListener(
         position: 'top',
         timer: 2500,
     })})
+}
+
+function botonVaciar(){
+    const sweetVaciar = document.getElementById('botonvaciar')
+if(carrito.length > 0){
+    sweetVaciar.style.display = 'block'
+}else{
+    sweetVaciar.style.display = 'none'
+}
+}
+
+function vaciarCarrito(){
+    carrito.forEach(producto => {
+        document.getElementById(`${producto}`).remove()
+        carrito=[]
+    }
+    
+    )
+    contadorCarrito()
+}
+
 
 // const sweetAgregado = document.getElementById("pedido").addEventListener('click', function(){
 //     Swal.fire({

@@ -131,7 +131,7 @@ img.u-full-width{
     display: table;
 
 }
-a.textoRojo{
+h5.textoRojo{
     display: block;
     color: red;
     text-align: right;
@@ -147,8 +147,10 @@ b.textoRojo{
 }
 
 #carrito{
-    margin: 5px;
-    margin-left: 750px;
+    display: flex;
+    width: 300px;
+    margin-right: 20px;
+    margin-left: auto;
     padding: 10px;
     padding-top: 2px;
     padding-left: 10px;
@@ -176,12 +178,13 @@ i.material-icons{
     text-align: center;
     text-decoration: none   ;
 }
-i#botonComprar{
+/* i#botonComprar{
+    display: block;
     text-decoration: none;
     margin: 1px;
     padding: 1px;
-    margin-left: 150px;
-    margin-right: 150px;
-    border: 0px;
+    margin-left: 0px;
+    margin-right: 250px;
+    border
     text-decoration: inherit;
-}
+} */
