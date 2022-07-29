@@ -24,7 +24,17 @@ const pedirPosts = async () => {
             precio.className = "precio"
             precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
-            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`)} )
+            comprar.id = "pedido"
+            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`),
+            Swal.fire({
+                toast: true,
+                icon: 'success',
+                title: 'Se agrego al carrito',
+                // animation: false,
+                position: 'top',
+                timer: 1500,
+                showConfirmButton: false,
+            })} )
             comprar.innerText = "Agregar al carrito"
             div1.appendChild(div2)
             div2.appendChild(div3)
@@ -35,6 +45,8 @@ const pedirPosts = async () => {
             div4.appendChild(precio)
             div4.appendChild(comprar)
             lista.append(div1)
+            comprarBoton()
+            botonVaciar()
             // li.innerText = `${post.producto}`
             // li.id = `${post.producto}` + "Prod"
             // li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
@@ -87,12 +99,13 @@ function agregarAlCarrito(producto,precio,emoji) {
     // guradoCarrito()
     const liNuevoProducto = document.createElement("li")
         liNuevoProducto.className = "collection-item red-text"
-        liNuevoProducto.innerText = " $" + precio + " " + producto + " " + emoji
+        liNuevoProducto.innerHTML = "<b>$" + precio + " " + producto + " " + emoji +"</b><b id=eliminarProducto class=textoRojo> X</b>"
         liNuevoProducto.id = producto
-        liNuevoProducto.addEventListener("dblclick", ()=> { removerDelCarrito(`${liNuevoProducto.id}`) })
         listadoCarrito.append(liNuevoProducto)
-
-}
+        const eliminarProducto = document.querySelectorAll('b.textoRojo')
+        eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto)
+        
+})}
 
 
 function removerDelCarrito(producto) {
@@ -103,6 +116,7 @@ function removerDelCarrito(producto) {
         if (item >= 0) {
         carrito.splice(item, 1)
         contadorCarrito()
+        
         // guradoCarrito()
         }
 }
@@ -114,8 +128,10 @@ function guradoCarrito() {
 
 function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
+    comprarBoton()
+    botonVaciar()
 }
-contadorCarrito()
+// contadorCarrito()
 
 const botonComprar = document.getElementById('botonCarrito')
     botonComprar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
@@ -125,3 +141,53 @@ const botonContador = document.getElementById('contador_carrito')
 
 const botonCerrar = document.getElementById('cerrarCarrito')
     botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
+
+function comprarBoton(){
+    const sweetComprar = document.getElementById('botonComprar')
+if(carrito.length > 0){
+    sweetComprar.style.display = 'block'
+}else{
+    sweetComprar.style.display = 'none'
+}
+sweetComprar.addEventListener('click', function(){
+    Swal.fire({
+        toast: true,
+        icon: 'success',
+        title: 'Gracias por su compra, espero que la difrute',
+        // animation: false,
+        position: 'top',
+        timer: 2500,
+    })})
+}
+
+function botonVaciar(){
+    const sweetVaciar = document.getElementById('botonvaciar')
+if(carrito.length > 0){
+    sweetVaciar.style.display = 'block'
+}else{
+    sweetVaciar.style.display = 'none'
+}
+}
+
+function vaciarCarrito(){
+    carrito.forEach(producto => {
+        document.getElementById(`${producto}`).remove()
+        carrito=[]
+    }
+    
+    )
+    contadorCarrito()
+}
+
+
+// const sweetAgregado = document.getElementById("pedido").addEventListener('click', function(){
+//     Swal.fire({
+//         title: 'se agrego al carrito',
+//         timer: 2000,
+//     })})
+
+
+
+    // document.querySelector(".material-icons").addEventListener('click', function(){
+    //     Swal.fire("Our First Alert");
+    //   });
