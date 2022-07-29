@@ -56,45 +56,15 @@ mostrarProductos()
 
 var carrito = []
 const titulo = document.getElementById("titulo")
-// const listadoFrutas = document.getElementById("listadoFrutas")
 const listadoCarrito = document.getElementById("listadoCarrito")
 
 
-// titulo.innerText = "RESTO-BAR"
 
-// const h1 = document.querySelector("h1")
-//         h1.onclick = ()=> {
-//             alert("Desea ir al Inicio?")
-//         }
-//         h1.addEventListener("click", ()=>{
-//             alert("Desea ir al Inicio?")
-//         })
-
-// function operadorTernario (){
-//     let userName = "RESTO-BAR"
-// let mensaje = userName === "RESTO-BAR" ? "Bienvenid@ a nuestro Humilde " + userName : "No se reconoce el usuario."
-//     alert (mensaje)
-// }
-
-// function cargarProductos() {
-//     listadoFrutas.innerHTML = ""
-//     for (const producto of productos) {
-//         const li = document.createElement("li")
-//               li.className = "collection-item blue-text"
-//               li.innerText = producto
-//               li.id = producto + "Prod"
-//               li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
-//               listadoFrutas.append(li)
-//     }
-// }
-
-// cargarProductos()
 
 function agregarAlCarrito(producto,precio,emoji) {
     sumarTotal(parseInt(precio))
     carrito.push(producto)
     contadorCarrito()
-    // guradoCarrito()
     const liNuevoProducto = document.createElement("li")
         liNuevoProducto.className = "collection-item red-text"
         liNuevoProducto.innerHTML = "<b>$" + precio + " " + producto + " " + emoji +"</b><b id=eliminarProducto class=textoRojo> X</b>"
@@ -102,20 +72,17 @@ function agregarAlCarrito(producto,precio,emoji) {
         listadoCarrito.append(liNuevoProducto)
         const eliminarProducto = document.querySelectorAll('b.textoRojo')
         eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto,precio)
-        
 })}
 
 
 function removerDelCarrito(producto,precio) {
     const productoAremover = document.getElementById(`${producto}`)
-        // productoAremover = "papas)"
         productoAremover.remove()
         item = carrito.indexOf(producto)
         if (item >= 0) {
         carrito.splice(item, 1)
         contadorCarrito()
         sumarTotal(0-precio)
-        // guradoCarrito()
         }
 }
 function guradoCarrito() {
@@ -130,7 +97,6 @@ function contadorCarrito(){
     botonVaciar()
     preciototal()
 }
-// contadorCarrito()
 
 const botonComprar = document.getElementById('botonCarrito')
     botonComprar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
@@ -153,7 +119,6 @@ sweetComprar.addEventListener('click', function(){
         toast: true,
         icon: 'success',
         title: 'Gracias por su compra, espero que la difrute',
-        // animation: false,
         position: 'top',
         timer: 2500,
     })})
@@ -191,17 +156,3 @@ if(carrito.length > 0){
     total.style.display = 'none'
 }
 }
-
-
-
-// const sweetAgregado = document.getElementById("pedido").addEventListener('click', function(){
-//     Swal.fire({
-//         title: 'se agrego al carrito',
-//         timer: 2000,
-//     })})
-
-
-
-    // document.querySelector(".material-icons").addEventListener('click', function(){
-    //     Swal.fire("Our First Alert");
-    //   });
