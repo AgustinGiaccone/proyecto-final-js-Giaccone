@@ -1,6 +1,21 @@
 const lista = document.querySelector('#listado')
 var carritoAbierto = false
 var total = 0
+var carrito = []
+const titulo = document.getElementById("titulo")
+const listadoCarrito = document.getElementById("listadoCarrito")
+
+const botonComprar = document.getElementById('botonCarrito')
+    botonComprar.addEventListener("click", ()=> {
+        document.getElementById('carrito').style.display = 'block'; })
+
+const botonContador = document.getElementById('contador_carrito')
+    botonContador.addEventListener("click", ()=> {
+        document.getElementById('carrito').style.display = 'block'; })
+
+const botonCerrar = document.getElementById('cerrarCarrito')
+    botonCerrar.addEventListener("click", ()=> {
+        document.getElementById('carrito').style.display = 'none'; })
 
 const mostrarProductos = async () => {
     const resp = await fetch('../productos.json')
@@ -52,15 +67,6 @@ const mostrarProductos = async () => {
     })
 }
 
-mostrarProductos()
-
-var carrito = []
-const titulo = document.getElementById("titulo")
-const listadoCarrito = document.getElementById("listadoCarrito")
-
-
-
-
 function agregarAlCarrito(producto,precio,emoji) {
     sumarTotal(parseInt(precio))
     carrito.push(producto)
@@ -73,7 +79,6 @@ function agregarAlCarrito(producto,precio,emoji) {
         const eliminarProducto = document.querySelectorAll('b.textoRojo')
         eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto,precio)
 })}
-
 
 function removerDelCarrito(producto,precio) {
     const productoAremover = document.getElementById(`${producto}`)
@@ -97,15 +102,6 @@ function contadorCarrito(){
     botonVaciar()
     preciototal()
 }
-
-const botonComprar = document.getElementById('botonCarrito')
-    botonComprar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
-
-const botonContador = document.getElementById('contador_carrito')
-    botonContador.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'block'; })
-
-const botonCerrar = document.getElementById('cerrarCarrito')
-    botonCerrar.addEventListener("click", ()=> { document.getElementById('carrito').style.display = 'none'; })
 
 function comprarBoton(){
     const sweetComprar = document.getElementById('botonComprar')
@@ -156,3 +152,5 @@ if(carrito.length > 0){
     total.style.display = 'none'
 }
 }
+
+mostrarProductos()
