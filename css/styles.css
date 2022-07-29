@@ -84,7 +84,7 @@ img.u-full-width{
 h5.textoRojo{
     display: block;
     color: red;
-    font-size: 16px;
+    font-size: 13px;
     text-align: right;
 }
 b.textoRojo{
@@ -94,23 +94,23 @@ b.textoRojo{
 
 
 #carrito{
-    display: flex;
-    width: 300px;
-    margin-right: 20px;
-    margin-left: auto;
+    position: absolute;
+    width: 210px;
+
+    margin-left: 80%;
     padding: 10px;
     padding-top: 2px;
-    padding-left: 10px;
+    padding-left: 0px;
     height: auto;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
     border-radius: 5px;
+    z-index: 2;
 }
-@media (max-width: 800px){
+@media (max-width: 1100px){
     #carrito{
-        display: flex;
-        margin: 20px;
-        margin-left: auto;
+        position: absolute;
+        margin-left: 70%;
         padding: 10px;
         padding-top: 2px;
         padding-left: 10px;
@@ -118,6 +118,21 @@ b.textoRojo{
         background-color: rgb(255, 255, 255);
         box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
         border-radius: 5px;
+        z-index: 2;
+}
+}
+@media (max-width: 800px){
+    #carrito{
+        position: absolute;
+        margin-left: 50%;
+        padding: 10px;
+        padding-top: 2px;
+        padding-left: 10px;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 15px 15px 0 rgb(1, 46, 1);
+        border-radius: 5px;
+        z-index: 2;
 }
 }
 i.material-icons{
@@ -145,10 +160,16 @@ b#total{
 
 #botonVaciar{
     text-decoration: inherit;
+    margin-left: 10px;
     border: 0px;
 }
 
 #botonComprar{
     text-decoration: inherit;
+    margin-left: 10px;
     border: 0px;
+}
+
+ul,#listadoCarrito,li,b {
+    font-size: 14px;
 }
