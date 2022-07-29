@@ -173,3 +173,6 @@ b#total{
 ul,#listadoCarrito,li,b {
     font-size: 14px;
 }
+.navbar-dark{
+    background-color: black;
+}
