@@ -1,5 +1,6 @@
 const lista = document.querySelector('#listado')
 var carritoAbierto = false
+var total = 0
 
 const pedirPosts = async () => {
     const resp = await fetch('../productos.json')
@@ -47,6 +48,7 @@ const pedirPosts = async () => {
             lista.append(div1)
             comprarBoton()
             botonVaciar()
+            preciototal()
             // li.innerText = `${post.producto}`
             // li.id = `${post.producto}` + "Prod"
             // li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
@@ -94,6 +96,7 @@ const listadoCarrito = document.getElementById("listadoCarrito")
 // cargarProductos()
 
 function agregarAlCarrito(producto,precio,emoji) {
+    sumarTotal(parseInt(precio))
     carrito.push(producto)
     contadorCarrito()
     // guradoCarrito()
@@ -103,12 +106,12 @@ function agregarAlCarrito(producto,precio,emoji) {
         liNuevoProducto.id = producto
         listadoCarrito.append(liNuevoProducto)
         const eliminarProducto = document.querySelectorAll('b.textoRojo')
-        eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto)
+        eliminarProducto[eliminarProducto.length -1].addEventListener("click", ()=> { removerDelCarrito(producto,precio)
         
 })}
 
 
-function removerDelCarrito(producto) {
+function removerDelCarrito(producto,precio) {
     const productoAremover = document.getElementById(`${producto}`)
         // productoAremover = "papas)"
         productoAremover.remove()
@@ -116,7 +119,7 @@ function removerDelCarrito(producto) {
         if (item >= 0) {
         carrito.splice(item, 1)
         contadorCarrito()
-        
+        sumarTotal(0-precio)
         // guradoCarrito()
         }
 }
@@ -130,6 +133,7 @@ function contadorCarrito(){
     document.getElementById('contador_carrito').innerText = carrito.length;
     comprarBoton()
     botonVaciar()
+    preciototal()
 }
 // contadorCarrito()
 
@@ -174,10 +178,25 @@ function vaciarCarrito(){
         document.getElementById(`${producto}`).remove()
         carrito=[]
     }
-    
     )
+    total=0
     contadorCarrito()
 }
+
+function sumarTotal(precio){
+    total = total+precio
+    document.getElementById("total").innerText=total
+}
+
+function preciototal(){
+    const total = document.getElementById('total')
+if(carrito.length > 0){
+    total.style.display = 'block'
+}else{
+    total.style.display = 'none'
+}
+}
+
 
 
 // const sweetAgregado = document.getElementById("pedido").addEventListener('click', function(){
