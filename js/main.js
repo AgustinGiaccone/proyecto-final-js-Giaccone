@@ -142,7 +142,7 @@ sweetComprar.addEventListener('click', function(){
     )}
 /*
 Muestra en pantalla el elemento id botonVaciar
-cuando se encuentra algun elemento en el arrry carrito
+cuando se encuentra algun elemento en el arrry carrito.
 */
 function botonVaciar(){
     const sweetVaciar = document.getElementById('botonVaciar')
