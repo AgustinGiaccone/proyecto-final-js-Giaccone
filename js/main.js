@@ -58,7 +58,9 @@ const mostrarProductos = async () => {
                     title: 'Se agrego una/ '+`${producto.nombre}`+' al carrito',
                     position: 'top',
                     timer: 1500,
-                    showConfirmButton: false
+                    showConfirmButton: false,
+                    background:'rgb(12, 99, 70)',
+                    color: 'black'
             })} )
             row.appendChild(fourColumns)
             fourColumns.appendChild(card)
@@ -124,13 +126,16 @@ if(carrito.length > 0){
 }else{
     sweetComprar.style.display = 'none'
 }
+
 sweetComprar.addEventListener('click', function(){
     Swal.fire({
         toast: true,
         icon: 'success',
-        title: 'Gracias por su compra, espero que la difrute',
+        title: 'Gracias por su compra espero que la difrute',
         position: 'top',
         timer: 2500,
+        background:'rgb(12, 99, 70)',
+        color: 'white'
     })})
 }
 /*
@@ -157,7 +162,7 @@ function vaciarCarrito(){
     contadorCarrito()
 }
 /*
-suma los precios de los productos selecionados 
+suma los precios de los productos selecionados
 */
 function sumarTotal(precio){
     total = total+precio
