@@ -121,11 +121,11 @@ img.responsive-img {
 }
 
 img.u-full-width{
-    width: 250px;
+    width: 245px;
 }
 
 .card{
-    width: 200px;
+    width: 245px;
     background-color: rgb(10, 10, 12);
     display: table;
 }
@@ -188,6 +188,7 @@ i.material-icons{
 }
 
 b#total{
+    text-align: right;
     font-size: 15px;
     color: black;
     text-decoration: none;
@@ -198,6 +199,7 @@ b#total{
     text-decoration: inherit;
     border: 0px;
 }
+
 #botonComprar{
     text-decoration: inherit;
     border: 0px;

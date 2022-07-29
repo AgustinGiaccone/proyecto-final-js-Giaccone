@@ -2,7 +2,7 @@
     {
         "nombre": "Hamburguesa",
         "precio": 200,
-        "info": "Lo que toda persona desea en su hamburguesa",
+        "info": " Ternera, tomate, lechuga y queso cheddar",
         "imagen": "./images/hamburguesa rellena de queso envuelta en tocino.jpg",
         "emoji": "🍔"
     },
