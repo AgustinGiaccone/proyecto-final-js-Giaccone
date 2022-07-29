@@ -9,7 +9,7 @@ const botonComprar = document.getElementById('botonCarrito')
     botonComprar.addEventListener("click", ()=> {
         document.getElementById('carrito').style.display = 'block'; })
 
-const botonContador = document.getElementById('contador_carrito')
+const botonContador = document.getElementById('contadorCarrito')
     botonContador.addEventListener("click", ()=> {
         document.getElementById('carrito').style.display = 'block'; })
 
@@ -21,17 +21,17 @@ const mostrarProductos = async () => {
     const resp = await fetch('../productos.json')
     const data = await resp.json()
     data.forEach((producto) => {
-        const div1 = document.createElement("div")
-            div1.className = "row"
-        const div2 = document.createElement("div")
-            div2.className = "four columns"
-        const div3 = document.createElement("div")
-            div3.className = "card"
+        const row = document.createElement("div")
+            row.className = "row"
+        const fourColumns = document.createElement("div")
+            fourColumns.className = "four columns"
+        const card = document.createElement("div")
+            card.className = "card"
         const img = document.createElement("img")
             img.src = `${producto.imagen}`
             img.className = "u-full-width"
-        const div4 = document.createElement("div")
-            div4.className = "info-card"
+        const infoCard = document.createElement("div")
+            infoCard.className = "info-card"
         const h4 = document.createElement("h4")
             h4.innerText = `${producto.nombre}`
         const p1 = document.createElement("p")
@@ -52,15 +52,15 @@ const mostrarProductos = async () => {
                     showConfirmButton: false
             })} )
             comprar.innerText = "Agregar al carrito"
-            div1.appendChild(div2)
-            div2.appendChild(div3)
-            div3.appendChild(img)
-            div3.appendChild(div4)
-            div4.appendChild(h4)
-            div4.appendChild(p1)
-            div4.appendChild(precio)
-            div4.appendChild(comprar)
-            lista.append(div1)
+            row.appendChild(fourColumns)
+            fourColumns.appendChild(card)
+            card.appendChild(img)
+            card.appendChild(infoCard)
+            infoCard.appendChild(h4)
+            infoCard.appendChild(p1)
+            infoCard.appendChild(precio)
+            infoCard.appendChild(comprar)
+            lista.append(row)
             comprarBoton()
             botonVaciar()
             preciototal()
@@ -97,7 +97,7 @@ function guradoCarrito() {
 }
 
 function contadorCarrito(){
-    document.getElementById('contador_carrito').innerText = carrito.length;
+    document.getElementById('contadorCarrito').innerText = carrito.length;
     comprarBoton()
     botonVaciar()
     preciototal()
@@ -121,7 +121,7 @@ sweetComprar.addEventListener('click', function(){
 }
 
 function botonVaciar(){
-    const sweetVaciar = document.getElementById('botonvaciar')
+    const sweetVaciar = document.getElementById('botonVaciar')
 if(carrito.length > 0){
     sweetVaciar.style.display = 'block'
 }else{
