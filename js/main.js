@@ -116,6 +116,7 @@ function contadorCarrito(){
     botonVaciar()
     preciototal()
 }
+
 /*
 se define el boton comprar los producto generenado un sweetalert
 */
@@ -126,14 +127,13 @@ if(carrito.length > 0){
 }else{
     sweetComprar.style.display = 'none'
 }
-
 sweetComprar.addEventListener('click', function(){
     Swal.fire({
         toast: true,
         icon: 'success',
         title: 'Gracias por su compra espero que la difrute',
         position: 'top',
-        timer: 2500,
+        // timer: 2500,
         background:'rgb(12, 99, 70)',
         color: 'white'
     })})
