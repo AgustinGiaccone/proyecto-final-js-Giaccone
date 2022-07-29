@@ -6,14 +6,10 @@
     <title>RESTO-BAR</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
-    <!-- <link rel="stylesheet" href="./css/skeleton.css"> -->
     <link rel="stylesheet" href="./css/styles.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- <script defer src="./js/arraysproductos.js"></script> -->
     <script defer src="./js/main.js"></script>
     <script src="./js/sweetAlert.js"></script>
 
@@ -24,7 +20,6 @@
         <div class="container-fluid">
             <a class="navbar-brand"><img class="responsive-img-logo" src="./images/LOGO.jpg"></a>
             <form class="d-flex" role="search">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
                 <a id="botonCarrito" class="btn btn-outline-success"><img class="responsive-img" src="./images/carrito.png" width="10%"></a>
                 <a id="contadorCarrito" class="btn btn-outline-success green"></a>
             </form>
@@ -39,33 +34,14 @@
         </ul>
         <a class="btn-floating btn-large blue white-text
                 z-depth-3 waves-effect waves-light">
-                <!-- <a id="botonCarrito" class="btn btn-outline-success green" width="10%"></a> -->
                 <b id="total">total</b>
                 <b id="botonVaciar" class="btn btn-outline-success green" style="display:none" onclick="vaciarCarrito()" >Vaciar</b>
                 <b id="botonComprar" class="btn btn-outline-success green material-icons" >Comprar</b>
         </a>
     </div>
-    <div class="center">
-        
-        
-    </div>
-    <div class="tarjetas">
+    <div class="center"></div>
 
-        <!-- <ul id="listado"></ul> -->
-        <ul class="formato" id="listado">
-            <!-- <div class="row">
-                <div class="four columns">
-                    <div class="card">
-                        <img src="./images/hamburguesa rellena de queso envuelta en tocino.jpg" class="u-full-width">
-                        <div class="info-card">
-                            <h4>Hamburguesa rellena de queso envuelta en tocino.</h4>
-                            <p>Hamburguesa rellena de queso cheddar, envuelta en tocino y bañada con salsa de barbacoa.</p>
-                            <p class="precio">$600</p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito"> Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div> -->
-        </ul>
-    <br>
+    <div class="tarjetas">
+        <ul class="formato" id="listado"></ul>
 </body>
 </html>
