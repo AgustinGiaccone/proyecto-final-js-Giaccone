@@ -2,7 +2,7 @@ const lista = document.querySelector('#listado')
 var carritoAbierto = false
 var total = 0
 
-const pedirPosts = async () => {
+const mostrarProductos = async () => {
     const resp = await fetch('../productos.json')
     const data = await resp.json()
     data.forEach((producto) => {
@@ -26,15 +26,15 @@ const pedirPosts = async () => {
             precio.innerText = `$ ${producto.precio}`
         const comprar = document.createElement("a")
             comprar.id = "pedido"
-            comprar.addEventListener("click", ()=> { agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`),
-            Swal.fire({
-                toast: true,
-                icon: 'success',
-                title: 'Se agrego al carrito',
-                // animation: false,
-                position: 'top',
-                timer: 1500,
-                showConfirmButton: false,
+            comprar.addEventListener("click", ()=> {
+                agregarAlCarrito(`${producto.nombre}`,`${producto.precio}`,`${producto.emoji}`),
+                Swal.fire({
+                    toast: true,
+                    icon: 'success',
+                    title: 'Se agrego al carrito',
+                    position: 'top',
+                    timer: 1500,
+                    showConfirmButton: false
             })} )
             comprar.innerText = "Agregar al carrito"
             div1.appendChild(div2)
@@ -49,16 +49,11 @@ const pedirPosts = async () => {
             comprarBoton()
             botonVaciar()
             preciototal()
-            // li.innerText = `${post.producto}`
-            // li.id = `${post.producto}` + "Prod"
-            // li.addEventListener("click", ()=> { agregarAlCarrito(`${li.innerText}`) } )
-            // lista.append(li)
     })
 }
 
-pedirPosts()
+mostrarProductos()
 
-// const productos = ["hamburguesa", "papita", "soda"]
 var carrito = []
 const titulo = document.getElementById("titulo")
 // const listadoFrutas = document.getElementById("listadoFrutas")
